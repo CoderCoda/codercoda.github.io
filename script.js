@@ -17,7 +17,7 @@ new Vue({
 				subtitle: "An online peer-to-peer textbook marketplace for college students",
 				demo: true,
 				demoLink: "http://campusbackpack.pythonanywhere.com/",
-				repoLink: "https://github.com/CoderCoda/campus-bookworm",
+				repoLink: "https://github.com/CoderCoda/campus-backpack",
 				tools: [{name:"Django"},{name:"Python"},{name:"Bootstrap"}]
 			},
 			{
