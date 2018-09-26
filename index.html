@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Mitchell Li">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mitchell Li</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="./assets/favicon.png">
+	
+	<!-- Vue and Vuetify -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+	<script src="script.js" async></script>
+</head>
+
+<body>
+
+	<div id="app">
+	<v-app>
+		<!-- My name :) -->
+		<v-toolbar height="130px" class="white elevation-5">
+			<v-spacer></v-spacer>
+				<h1 class="display-3 text-xs-center font-weight-thin grey--text text--darken-1">MITCHELL LI</h1>
+			<v-spacer></v-spacer>
+		</v-toolbar>
+
+		
+		<v-content>
+			<v-container fluid>
+				<v-layout align-start justify-center row wrap fill-height>
+					
+					<v-flex xs9 md3 xl2 class="mx-3 mb-3">	
+						<v-expansion-panel class="elevation-5">
+							<v-expansion-panel-content>
+								<div slot="header" class="subheading font-weight-thin">ABOUT ME</div>
+
+								<v-card>
+									<v-card-media src="assets/mitchell.jpg" height="200px"></v-card-media>
+									<v-card-title primary-title class="title font-weight-light">Hello, World!</v-card-title>
+									<v-card-text class="pt-0 font-weight-light">I am an undergraduate Computer Science and Economics student at Duke University expecting to graduate in the fall of 2019. My current professional focus lies in web development, but I'm open to learning anything!</v-card-text>
+									<v-card-text class="pt-0 font-weight-light">When not coding, I can be found producing electronic music, playing basketball, and reading random Wikipedia articles.</v-card-text>
+								</v-card>
+							</v-expansion-panel-content>
+						</v-expansion-panel>
+					</v-flex>
+
+					<v-flex xs9 md3 xl2 class="mx-3 mb-3">
+						<v-expansion-panel class="elevation-5">	
+							<v-expansion-panel-content>
+								<div slot="header" class="subheading font-weight-thin">PROFILES</div>
+
+								<v-card>
+									<v-list>
+										<v-list-tile v-for="profile in profiles" :key="profile.title" avatar @click="" :href="profile.href" target="_blank">
+											<v-list-tile-title class="subheading font-weight-medium grey--text text--darken-1">{{ profile.title }}</v-list-tile-title>
+											<v-icon>{{ profile.icon }}</v-icon>
+										</v-list-tile>
+									</v-list>
+								</v-card>
+							</v-expansion-panel-content>
+						</v-expansion-panel>
+					</v-flex>
+					
+					<v-flex xs9 md3 xl2 class="mx-3">
+						<v-expansion-panel class="elevation-5">	
+							<v-expansion-panel-content>
+								<div slot="header" class="subheading font-weight-thin">PROJECTS</div>
+
+								<v-expansion-panel inset>
+									<v-expansion-panel-content v-for="project in projects" :key="project.title">
+										<div slot="header" class="body-2 font-weight-light">{{ project.title }}</div>
+
+										<v-card>
+											<v-card-text class="body-1 font-weight-light">{{ project.subtitle }}</v-card-text>
+											<v-card-text class="pt-0">
+													<v-chip small v-for="tool in project.tools">{{ tool.name }}</v-chip>
+											</v-card-text>
+											<v-card-actions class="pt-0">
+												<v-btn flat small color="blue" v-if="project.demo" :href="project.demoLink" target="_blank">Demo</v-btn>
+												<v-btn flat small color="blue" :href="project.repoLink" target="_blank">Repo</v-btn>
+											</v-card-actions>
+										</v-card>
+									</v-expansion-panel-content>
+								</v-expansion-panel>
+							</v-expansion-panel-content>
+						</v-expansion-panel>
+					</v-flex>
+
+				</v-layout>
+			</v-container>
+		</v-content>
+		
+	</v-app>
+	</div>
+</body>
+</html>
