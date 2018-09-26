@@ -75,7 +75,7 @@ new Vue({
 				subtitle: "A nice Vue of my styling abilities.",
 				demo: false,
 				demoLink: "",
-				repoLink: "https://github.com/CoderCoda/limitchell",
+				repoLink: "https://github.com/CoderCoda/codercoda.github.io",
 				tools: [{name:"Vuetify.js"},{name:"Vue.js"},{name:"CSS"}]
 			}
 		]
